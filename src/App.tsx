@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+                  // import { CssBaseline} from "@mui/material";
+                   import './App.css';
+                   import { AuthProvider } from "./theme/authContext";
+                   import Header from "./components/header";
+                   import Footer from "./components/footer";
+                   import Startpage from "./pages/startpage";
+                   import { ThemeProvider2} from "./theme/ThemeContext";
+                   import {BackgroundImageTheme} from "./theme/theme";
+                   import {Outlet} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+                   const App: React.FC = () => {
 
-export default App;
+
+                       return (
+                               <ThemeProvider2>
+                              <BackgroundImageTheme>
+                                    <AuthProvider>
+                                       <div>
+                                           <Header />
+                                           <main>
+                                           <Outlet />
+
+                                           </main>
+                                           <Footer />
+                                       </div>
+                                   </AuthProvider>
+                                 </BackgroundImageTheme>
+                               </ThemeProvider2>
+                       );
+                   }
+
+                   export default App;

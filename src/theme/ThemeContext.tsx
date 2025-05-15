@@ -8,7 +8,7 @@ interface ThemeContextType {
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+export const ThemeProvider2 = ({ children }: { children: ReactNode }) => {
     const [theme, setTheme] = useState(lightTheme);
 
     const toggleTheme = () => {
